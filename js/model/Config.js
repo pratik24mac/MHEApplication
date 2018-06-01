@@ -29,7 +29,7 @@ define([
     }
 
     Config.prototype.getCofig = function(p_sKey) {
-        return { p_sKey: this.oConfig[p_sKey] };
+        return this.oConfig[p_sKey];
     }
     if (_instanceConfig === undefined) {
         _instanceConfig = new Config();

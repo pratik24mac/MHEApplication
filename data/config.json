@@ -8,5 +8,44 @@
         "antialias": true,
         "transparent": false,
         "resolution": 1
+    },
+    "staticObj":
+    {
+        "circle":
+        {
+            "position":
+            {
+                "x": 123,
+                "y": 123
+            },
+            "color": "red"
+        },
+        "ractangle":
+        {
+            "position":
+            {
+                "x": 223,
+                "y": 223
+            },
+            "color": "blue"
+        },
+        "square":
+        {
+            "position":
+            {
+                "x": 289,
+                "y": 290
+            },
+            "color": "yellow"
+        },
+        "triangle":
+        {
+            "position":
+            {
+                "x": 310,
+                "y": 320
+            },
+            "color": "green"
+        }
     }
 }
