@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<style type="text/css">
+		.inner-container{
+			height: 600px;
+			width: 800px;
+			border: 1px red solid;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div id="application">
+		<div id="ui"></div>
+		<div id="tab_container">
+			<div class="tab-button-container">
+				<button class="tab" aria-controls="panel_1" id="Explore">Explore</button>
+				<button class="tab" aria-controls="panel_2" id="Activity">Activity</button>
+			</div>
+			<div class="tab-panel-container">
+				<div id="panel_1" class="tab-panel">
+					<div class="inner-container">
+						<h1>hello expolore</h1>
+					</div>
+				</div>
+				<div id="panel_2" class="tab-panel">
+					<div class="inner-container canvas-container">
+						<h1>hello activity</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script data-main="js/core/main" src="js/libs/require.js"></script>
+</body>
+</html>
