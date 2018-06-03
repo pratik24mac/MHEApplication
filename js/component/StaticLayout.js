@@ -1,18 +1,19 @@
 define([
     'pixi',
-    '../utils/EventDispatcher'
-], function(PIXI, EventDispatcher) {
+    '../utils/EventDispatcher',
+    '../utils/util'
+], function(PIXI, EventDispatcher, util) {
     'use strict';
 
-	var _instanceStaticLayout;
+    var _instanceStaticLayout;
+
     function StaticLayout() {
         EventDispatcher.call(this);
         this.parentView;
         this.PixiStage = new PIXI.Container();
         this.PixiGraphics = new PIXI.Graphics();
     }
-    StaticLayout.prototype = Object.create(EventDispatcher && EventDispatcher.prototype);
-    StaticLayout.prototype.constructor = StaticLayout;
+    util.inherits(StaticLayout, EventDispatcher);
 
     StaticLayout.prototype.init = function(parent_view) {
         this.parentView = parent_view;
@@ -33,8 +34,8 @@ define([
         this.parentView.renderer.render(this.PixiStage);
         this.dispatchEvent('COMPONENT_DRAW_DONE', { type: 'COMPONENT_DRAW_DONE', target: this });
     }
-    if(_instanceStaticLayout === undefined){
-    	_instanceStaticLayout = new StaticLayout();
+    if (_instanceStaticLayout === undefined) {
+        _instanceStaticLayout = new StaticLayout();
     }
     return _instanceStaticLayout;
 })

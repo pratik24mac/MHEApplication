@@ -1,19 +1,17 @@
 define([
     'jquery',
     '../utils/EventDispatcher',
+    '../utils/util',
     '../component/TabManager',
     './CanvasController'
-], function($, EventDispatcher, TabManager, CanvasController) {
+], function($, EventDispatcher, util, TabManager, CanvasController) {
     'use strict';
     var _instanceApplicationController;
 
     function ApplicationController() {
         EventDispatcher.call(this);
     }
-
-    ApplicationController.prototype = Object.create(EventDispatcher && EventDispatcher.prototype);
-    ApplicationController.prototype.constructor = ApplicationController;
-
+    util.inherits(ApplicationController, EventDispatcher);
     ApplicationController.prototype.init = function() {
         var oTabManager = new TabManager(),
             oCanvasController = new CanvasController();

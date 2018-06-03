@@ -14,9 +14,7 @@ define([
 
         this._onConfigLoaded = onConfigLoaded.bind(this);
     }
-    Config.prototype = Object.create(EventDispatcher && EventDispatcher.prototype);
-    Config.prototype.constructor = Config;
-
+    util.inherits(Config, EventDispatcher);
     Config.prototype.loadConfig = function(p_sUrl) {
         var oResourceLoader = new ResourceLoader();
         oResourceLoader.addEventListener('FILE_LOADED', this._onConfigLoaded);

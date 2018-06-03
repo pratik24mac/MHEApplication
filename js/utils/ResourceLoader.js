@@ -1,15 +1,15 @@
 define([
     'jquery',
-    './EventDispatcher'
-], function($, EventDispatcher) {
+    './EventDispatcher',
+    './util'
+], function($, EventDispatcher, util) {
     'use strict';
 
     function ResourceLoader() {
         EventDispatcher.call(this);
         this.onFileLoaded = onFileLoaded.bind(this);
     }
-    ResourceLoader.prototype = Object.create(EventDispatcher && EventDispatcher.prototype);
-    ResourceLoader.prototype.constructor = ResourceLoader;
+    util.inherits(ResourceLoader, EventDispatcher)
 
     function loadJSON(p_sUrl, callback) {
         $.ajax({
